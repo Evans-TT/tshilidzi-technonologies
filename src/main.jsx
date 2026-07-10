@@ -128,7 +128,13 @@ function Header() {
       <a className="brand" href="#home" aria-label="Tshilidzi Technologies home">
         <img src={assets("logo-mark.png")} alt="" />
       </a>
-      <button className="menu-button" onClick={() => setOpen((value) => !value)}>
+      <button
+        className="menu-button"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
         <span />
         <span />
         <span />
@@ -506,8 +512,9 @@ function App() {
   return (
     <>
       <LoadingScreen done={loaded} />
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <HomeServices />
         <Stats />
